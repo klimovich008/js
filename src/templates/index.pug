@@ -28,5 +28,12 @@ html(lang="en")
                   th ID
                   th login
                   th url
-                  th.text-center contributions
+                  th contributions
+                  th.text-center 
+                      select#select_group(onchange = "test(this.value)")
+                        option(value = "All") All
+                        option(value = "Bronze") Bronze
+                        option(value = "Silver") Silver
+                        option(value = "Gold") Gold
+
               

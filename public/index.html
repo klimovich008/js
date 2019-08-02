@@ -28,7 +28,15 @@
               <th>ID</th>
               <th>login</th>
               <th>url</th>
-              <th class="text-center">contributions</th>
+              <th>contributions</th>
+              <th class="text-center"> 
+                <select id="select_group" onchange="test(this.value)">
+                  <option value="All">All</option>
+                  <option value="Bronze">Bronze</option>
+                  <option value="Silver">Silver</option>
+                  <option value="Gold">Gold</option>
+                </select>
+              </th>
             </tr>
           </thead>
         </table>
