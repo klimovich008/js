@@ -5,12 +5,20 @@ function check_group(contributions){
       if(contributions>10) return "Silver";
       return "Bronze";
   }
-
+ function do_modal(key,company,location,email){
+   modal = "    <div class=\"modal fade\" id='user_" + key + "' tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\">\r\n      <div class=\"modal-dialog modal-sm\">\r\n        <div class=\"modal-content\">\r\n          <div class=\"col\">Company - " + company + " <\/div>\r\n          <div class=\"col\">Location - " + location + "<\/div>\r\n          <div class=\"col\">Email - " + email + "<\/div>\r\n        <\/div>\r\n      <\/div>\r\n    <\/div>"
+   return modal;
+ }
   $.getJSON( "https://api.github.com/repos/thomasdavis/backbonetutorials/contributors", function( data ) {
     var items = [];
-
+    var i=0;
+    let modal ="";
     $.each( data, function( key, val ) {
-      items.push("<tr class = 'line'>" + "<td id='" + key + "' >" + val.id + "</td> " + "<td>" + val.login + "</td> " + "<a><td>" + val.url + "</td> </a>" +"<td>" + val.contributions + "</td> "  +"<td class = 'Group' value='" + check_group(val.contributions) + "'>" + check_group(val.contributions) + "</td> " + "</tr>" );
+      $.getJSON( "https://api.github.com/users/" + val.login, function( data ) {
+        modal = do_modal(key,data.company,data.location,data.email)
+        $(modal).appendTo("#table");
+        });
+      items.push("<tr class = 'line' style='cursor: grab;' data-toggle='modal' data-target='#user_" + key + "' >" + "<td id='" + key + "' >" + val.id + "</td> " + "<td>" + val.login + "</td> " + "<a><td>" + val.url + "</td> </a>" +"<td>" + val.contributions + "</td> "  +"<td class = 'Group' value='" + check_group(val.contributions) + "'>" + check_group(val.contributions) + "</td> " + "</tr>" );
     });         //document.body.append(elm);
     $( "<tbody/>",{
       html: items.join( "" )
