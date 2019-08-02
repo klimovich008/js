@@ -1,0 +1,41 @@
+
+block vars
+
+doctype html
+html(lang="en")
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+        meta(name="format-detection" content="telephone=no")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css', integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/', crossorigin='anonymous')
+        script(src='https://use.fontawesome.com/3fcbcc6829.js')
+        link(rel='stylesheet', href='../css/datepicker.min.css')
+        link(rel='stylesheet', href='../css/global.css')
+        title!=title
+        <!--[if lt IE 9]>
+        script(src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js")
+        script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+        <![endif]-->
+
+        block head
+    body
+        include mixin
+        div(style='height: 0; width: 0; position: absolute; visibility: hidden')
+        .content
+            main.page-main
+                block content
+
+                block end
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/plugins/jquery.sticky-kit.min.js')
+        script(src='../js/plugins/datepicker.min.js')
+        script(src='../js/select.js')
+        script(src='../js/validateForm.js')
+        script(src='../js/dropdown.js')
+        //script(src='../js/eppzscrollto.js')
+        script(src='../js/pages/registrationStepTwoNew.js')
+        script(src='../js/main.js')
+    block end

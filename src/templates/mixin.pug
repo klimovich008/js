@@ -1,0 +1,39 @@
+
+mixin formGroup(form)
+    .form-group(class=form.islarge ? 'form-group-lg': null, class=form.isError ? 'has-error': null)
+        if form.label
+            label(for=form.id)!= form.label + (form.isRequired ? ' <sup>*</sup>' : '')
+        else
+            null
+        if form.isArea
+            textarea.form-control(id=form.id || null, placeholder= form.placeholder,
+            pattern= form.pattern ? form.pattern : form.type === 'email' ? "/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" : null,
+             value!=form.value || '',
+            rows!=form.isArea.rows || null,
+            disabled = form.disabled ? true : null,
+            readonly = form.readonly ? true : null,
+            type=form.type || 'text',
+            maxlength= form.maxlength || null, minlength= form.minlength || null,
+            required=form.isRequired || null, data-inputmask= form.mask || null)
+        else
+            .input-wrap
+                input.form-control(id=form.id || null, placeholder= form.placeholder, class=form.className || null,
+                pattern= form.pattern ? form.pattern: form.type === 'email' ? "/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" : null,
+                value!=form.value || '',
+                disabled = form.disabled ? true: null,
+                readonly = form.readonly ? true : null,
+                type=form.type || 'text',
+                maxlength= form.maxlength || null, minlength= form.minlength || null,
+                required=form.isRequired || null, data-inputmask= form.mask || null,
+                autocomplete=form.autocomplete || null
+                name=form.name)          
+                if !form.newPassword      
+                    if form.type === 'password'
+                        button.form-button.btn-password-toggle.js-password-toggler
+                            <i class="far icon fa-eye"></i>
+                    if form.isError
+                        span.error_required.text-danger required
+            if form.isError
+                span.error-text.text-danger(role="alert") Please enter your last name.   
+
+        span.text-danger(id=form.id ? form.id + '-error': null, role='alert', style='display: none;')!= form.error || null

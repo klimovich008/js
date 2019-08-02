@@ -1,48 +1,32 @@
 doctype html
 html(lang="en")
     head
+        script(src='https://code.jquery.com/jquery-3.4.1.min.js', integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=', crossorigin='anonymous')
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
         meta(name="format-detection" content="telephone=no")
         link(rel='stylesheet', href='css/global.css')
-        title="Air Liquid"
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+        title="1 step"
         <!--[if lt IE 9]>
         script(src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js")
         script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
         <![endif]-->
+        script(src="js/table.js")
         style(type='text/css').
            .page-main {
                 padding: 20px;
             }
     body
-
-        .content
-            main.page-main
-                .container.core
-                    .well
-                        .row
-                            .col-sm-12
-                                h4 Pages
-                                ul
-                                    li: a(href='pages/industries.html', target='_blank') Industries
-                                    li: a(href='pages/login.html', target='_blank') Login
-                                h4 My Account
-                                ul
-                                    li: a(href='pages/account.html', target='_blank') My Account
-                                    li: a(href='pages/account-profile.html', target='_blank') Profile
-                                    li: a(href='pages/address-book.html', target='_blank') Address book
-                                    li: a(href='pages/invoices.html', target='_blank') Invoices
-                                    li: a(href='pages/invoice-details.html', target='_blank') Invoice Details
-                                    li: a(href='pages/review-invoice-payment.html', target='_blank') Review Invoice Payment
-                                    li: a(href='pages/purchase-lists.html', target='_blank') Purchase Lists
-                                    li: a(href='pages/orders.html', target='_blank') Orders
-                                h4 Registration
-                                ul
-                                    li: a(href='pages/register.html', target='_blank') Register
-                                    li: a(href='pages/registration-step-one.html', target='_blank') Registration Step One
-                                    li: a(href='pages/registration-step-two.html', target='_blank') Registration Step Two
-                                    li: a(href='pages/registration-step-two-new.html', target='_blank') Registration Step Two New
-                                    li: a(href='pages/registration-step-three.html', target='_blank') Registration Step Three
-                                    li: a(href='pages/registration-confirmation.html', target='_blank') Registration Confirmation
-    block end
+      .container
+          .row.col-md-12.col-md-offset.custyle
+            table.table.table-striped.custab#table
+              thead
+                tr
+                  th ID
+                  th login
+                  th url
+                  th.text-center contributions
+              
