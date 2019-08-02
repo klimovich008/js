@@ -1,0 +1,225 @@
+.address-book {
+  .address-info {
+    @media screen and (max-width: $screen-xs){
+      margin-left: 0;
+    }
+    margin-left: 20px;
+    h3{
+      @media screen and (max-width: $screen-xs){
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 30px;
+        letter-spacing: 0.4375px;
+        color: #000000;
+
+      }
+    }
+    li {
+      list-style:none;
+      @media screen and (max-width: $screen-xs) {
+      padding-bottom: 10px;
+      color: #000000;
+      }
+    }
+    ul {
+      padding-inline-start: 0;
+      @media screen and (max-width: $screen-xs) {
+      margin-left: -20px;
+      padding-left: 20px;
+      margin-right: -20px;
+      display: flex;
+      flex-direction: column;
+      height: 170px;
+      justify-content: center;
+      background: rgba(55, 95, 155, 0.1);
+      }
+
+    }
+
+    &__grey {
+      color: #96A5AF;
+    }
+    &__header {
+      font-weight: 500;
+      margin-top: 0;
+    }
+  }
+
+  .need-help{
+    float: right;
+    font-size: 16px;
+    margin-top: 70px;
+    letter-spacing: 0.333333px;
+    line-height: 25px;
+    padding-bottom: 30px;
+    @media screen and (max-width: $screen-xs) {
+      font-weight: bold;
+      font-size: 14px;
+
+      line-height: 16px;
+
+      color: #000000;
+     margin-top: 10PX;
+     padding-bottom: 20PX;
+    }
+  }
+
+
+  #myModal{
+
+    margin-top:20px;
+    .address__form
+    {
+      margin-right: 10%;
+    }
+    .address_changes
+    {
+      text-transform: uppercase;
+      @media screen and (max-width: $screen-xs) {
+        font-weight: normal;
+        text-transform:none;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.291667px;
+        color: #000000;
+      }
+    }
+
+    h1{
+
+      @media screen and (max-width: $screen-xs) {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 24px;
+        /* or 133% */
+
+        letter-spacing: 0.375px;
+
+        color: #000000;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        mix-blend-mode: normal;
+        opacity: 0.7;
+      }
+    }
+    .address-book{
+    padding: 50px;
+    @media screen and (max-width: $screen-xs) {
+      padding: 0;
+    }
+
+    }
+    p{
+      line-height: 34px;
+      margin-left: 20px;
+      font-weight: 300;
+      font-size: 24px;
+      width: 70%;
+      color: #000000;
+      letter-spacing: 0.5px;
+      mix-blend-mode: normal;
+      opacity: 0.7;
+      @media screen and (max-width: $screen-xs) {
+        margin-left: 0;
+        width: 100%;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        /* or 129% */
+
+        letter-spacing: 0.291667px;
+
+        color: #000000;
+      }
+    }
+    textarea{
+    background: #FFFFFF;
+    border: 1px solid #96A5AF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 200px;
+    width: 100%;
+    resize: none;
+
+    }
+    i{
+      @media screen and (max-width: $screen-xs) {
+      width: 18px;
+      height: 18px;
+      margin-right: 30px;
+      margin-top: 20px;
+      }
+    }
+
+    .ml-40{
+      margin-left: 40px;
+      @media screen and (max-width: $screen-xs) {
+        margin-left: 0;
+      }
+    }
+  }
+  .custom_checkbox
+  {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 20px;
+    @media screen and (max-width: $screen-xs) {
+      margin-left: 0;
+    }
+    padding-left: 50px;
+  	padding-top: 0px;
+    margin-bottom: 25px;
+    text-transform: none;
+  	.checkbox__checkmark {
+      background-color: #FFFFFF;
+      border: 1px solid rgba(150, 165, 175, 0.5);
+      box-sizing: border-box;
+      border-radius: 2px;
+  	  height: 25px;
+  	  width: 25px;
+  		&:after {
+        top:-1px;
+        left: -1px;
+  			width: 25px;
+  			height: 25px;
+  		}
+  	}
+  }
+.ml-20{
+margin-left: 20px;
+@media screen and (max-width: $screen-xs ) {
+  margin-left: 0;
+}
+}
+
+}
+.mt--20{
+  @media screen and (max-width: $screen-xs ){
+  margin-top: -20px !important;
+}
+}
+.divider {
+  height: 20px;
+  width: 100%;
+}
+.submit__buttons{
+
+    &:first-of-type {
+      display: none;
+    }
+    &:last-of-type {
+      display: block;
+    }
+    @media screen and (max-width: $screen-xs) {
+      &:last-of-type {
+        display: none;
+      }
+      &:first-of-type {
+        display: block;
+      }
+    }
+
+}

@@ -1,0 +1,6 @@
+
+@mixin orders($count) {
+    @for $i from 1 through $count {
+        .grid-order-#{$i} { order: #{$i} }
+    }
+}

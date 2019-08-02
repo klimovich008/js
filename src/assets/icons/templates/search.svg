@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group@2x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop_Header" transform="translate(-934.000000, -90.000000)" stroke="#96A5AF" stroke-width="2">
+            <g id="Header">
+                <g id="search" transform="translate(805.000000, 80.000000)">
+                    <g id="Group" transform="translate(130.000000, 11.000000)">
+                        <circle id="Oval" cx="8" cy="8" r="8"></circle>
+                        <path d="M18,18 L13.65,13.65" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

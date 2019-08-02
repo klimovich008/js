@@ -1,0 +1,45 @@
+.login {
+
+    &-section {
+        background-color: rgba(150, 165, 175, 0.1);
+    }
+
+    &-title {
+        color: #000000;
+        font-size: 16px;      
+        font-weight: bold;      
+        font-style: normal;
+        line-height: normal;      
+        letter-spacing: normal;
+        margin-bottom: 17px;
+        text-transform: uppercase;
+    }
+
+    &-form {
+        margin-bottom: 100px;
+
+        &-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &-forgot-password {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1.29;
+        letter-spacing: 0.3px;
+        color: #96a5af;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &-register {
+        margin-bottom: 50px;
+    }
+}

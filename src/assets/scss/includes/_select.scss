@@ -1,0 +1,76 @@
+.select {
+  position: relative;
+  width: calc(100% - 35px);
+  background-color: #fff;
+  border: 1px solid #cad2d7;
+  border-radius: 3px 0 0 3px;
+  &-date {
+    font-weight: normal;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  &_registration {
+    border: 1px solid #96A5AF;
+    & .select_selected::after {
+      border: 1px solid #96A5AF;
+    }
+  }
+}
+.select select {
+  display: none;
+}
+.select_selected::after {
+  content: '';
+  width: 37px;
+  height: 37px;
+  position: absolute;
+  background-color: #fff;
+  top: -1px;
+  right: 0;
+  border: 1px solid #cad2d7;
+  border-radius: 0 3px 3px 0;
+  transform: translateX(35px);
+}
+.select_selected.select-arrow-active::after {
+  border-left: 0;
+}
+.select_selected::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  border: 2px solid #000;
+  border-right: 0;
+  border-top: 0;
+  z-index: 999;
+  transform: translateX(35px) rotate(-45deg);
+}
+.select_selected.select-arrow-active::before {
+    transform: translateX(35px) rotate(-225deg);
+    top: 14px;
+}
+.select-items div,.select_selected {
+  color: #000;
+  font-weight: bold;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.select-items div {
+  line-height: 40px!important;
+}
+.select-items {
+  position: absolute;
+  background-color: #fff;
+  top: 100%;
+  left: 0;
+  right: -34px;
+  z-index: 99;
+}
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}

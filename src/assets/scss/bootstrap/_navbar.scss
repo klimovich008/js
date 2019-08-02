@@ -1,0 +1,102 @@
+//
+// Navbars
+// --------------------------------------------------
+
+// Navbar heading
+//
+// Groups `.navbar-brand` and `.navbar-toggle` into a single component for easy
+// styling of responsive aspects.
+
+.navbar-header {
+    display: flex;
+}
+
+// Navbar toggle
+.navbar-toggle {
+    position: relative;
+    padding: 0;
+    margin-right: 25px;
+    margin-left: 22px;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    @include size(23px, 20px);
+    transform: rotate(0deg);
+    transition: .15s ease-in-out;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+
+    // Bars
+    .icon-bar {
+        background-color: #000;
+        display: block;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .15s ease-in-out;
+
+        &:nth-child(1) {
+            top: 0px;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 9px;
+        }
+
+        &:nth-child(4) {
+            top: 18px;
+        }
+    }
+
+    &.open {
+        .icon-bar {
+            &:nth-child(1) {
+                top: 9px;
+                width: 0%;
+                left: 50%;
+            }
+
+            &:nth-child(2) {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(3) {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+            &:nth-child(4) {
+                top: 9px;
+                width: 0%;
+                left: 50%;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        display: none;
+    }
+}
+
+.navbar-fixed-top {
+    // Fix the top/bottom navbars when screen real estate supports it
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: $zindex-navbar-fixed;
+}

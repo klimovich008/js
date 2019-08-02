@@ -1,0 +1,31 @@
+.payment {
+    h3{
+      color: #96A5AF;
+    }
+    .ml-20{
+    margin-left: 20px;
+    }
+    .invoice__table{
+      tr{
+        &:first-child,&:last-child{
+          font-weight: bold;
+        }
+        td{
+          height: 60px;
+          &:last-child{
+            text-align: right;
+          }
+        }
+
+      }
+    }
+    p{
+      font-size: 18px;
+    }
+  .divider{
+    height: 20px;
+  }
+  p{
+    margin-top: 20px;
+  }
+}
