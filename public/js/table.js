@@ -16,7 +16,7 @@ function check_group(contributions){
       html: items.join( "" )
     }).appendTo( "#table" );
   })
-  function test(input){
+  function group_select(input){
     let elements = document.querySelectorAll('.line');
     for(i = 0; i < elements.length; i++)
     {
@@ -26,3 +26,38 @@ function check_group(contributions){
     }
 
   }
+  function sort_select(dir) {
+  var  i, switching, b, shouldSwitch, dir, switchcount = 0;
+  switching = true;
+  while (switching) {
+    switching = false;
+    b = document.querySelectorAll('.line');
+    for (i = 0; i < (b.length - 1); i++) {
+      shouldSwitch = false;
+      if (dir == "ASC") {
+        if (b[i].querySelectorAll("td")[1].innerHTML.toLowerCase() >b[i+1].querySelectorAll("td")[1].innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "DESC") {
+        if (b[i].querySelectorAll("td")[1].innerHTML.toLowerCase() < b[i+1].querySelectorAll("td")[1].innerHTML.toLowerCase()) {
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+      switchcount ++;
+    } else {
+      if (switchcount == 0 && dir == "ASC") {
+        dir = "DESC";
+        switching = true;
+      }
+    }
+  }
+}
+$(function() {
+    sort_select("ASC");
+});
