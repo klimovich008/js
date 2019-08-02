@@ -29,7 +29,7 @@ function check_group(contributions){
     for(i = 0; i < elements.length; i++)
     {
        group = elements[i].querySelector(".Group");
-       group.innerHTML == input || input=="All" ? elements[i].style.display = "" : elements[i].style.display = "none";
+       group.innerHTML === input || input ==="All" ? elements[i].style.display = "" : elements[i].style.display = "none";
 
     }
 
@@ -42,12 +42,12 @@ function check_group(contributions){
     b = document.querySelectorAll('.line');
     for (i = 0; i < (b.length - 1); i++) {
       shouldSwitch = false;
-      if (dir == "ASC") {
+      if (dir === "ASC") {
         if (b[i].querySelectorAll("td")[1].innerHTML.toLowerCase() >b[i+1].querySelectorAll("td")[1].innerHTML.toLowerCase()) {
           shouldSwitch = true;
           break;
         }
-      } else if (dir == "DESC") {
+      } else if (dir === "DESC") {
         if (b[i].querySelectorAll("td")[1].innerHTML.toLowerCase() < b[i+1].querySelectorAll("td")[1].innerHTML.toLowerCase()) {
           shouldSwitch= true;
           break;
@@ -59,7 +59,7 @@ function check_group(contributions){
       switching = true;
       switchcount ++;
     } else {
-      if (switchcount == 0 && dir == "ASC") {
+      if (switchcount === 0 && dir === "ASC") {
         dir = "DESC";
         switching = true;
       }
