@@ -29,14 +29,14 @@ html(lang="en")
     table.col-md-10.col-md-offset.custyle.table-bordered.table-striped.table-condensed.cf#contributorsTable
       thead.cf
         tr
-          th ID
-          th login
+          th(data-title="ID") ID
+          th(data-title="login") login
             select(onchange = "sortTable(this.value)")
               option(value = "ASC") ASC
               option(value = "DESC") DESC
-          th url
-          th contributions
-          th.text-center 
+          th(data-title="url") url
+          th(data-title="contributions") contributions
+          th(data-title="Group")
               select(onchange = "selectGroup(this.value)")
                 option(value = "All") All
                 option(value = "Bronze") Bronze

@@ -19,9 +19,6 @@
   #no-more-tables table, #no-more-tables thead, #no-more-tables tbody, #no-more-tables th, #no-more-tables td, #no-more-tables tr {
     display: block;
     word-break: break-all; }
-  #no-more-tables thead tr {
-    position: absolute;
-    top: -9999px; }
   #no-more-tables tr {
     border: 1px solid #ccc; }
   #no-more-tables td {
