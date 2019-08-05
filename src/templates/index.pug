@@ -30,13 +30,13 @@ html(lang="en")
                 tr
                   th ID
                   th login
-                    select#select_group(onchange = "sort_select(this.value)")
+                    select#select_group(onchange = "sortTable(this.value)")
                       option(value = "ASC") ASC
                       option(value = "DESC") DESC
                   th url
                   th contributions
                   th.text-center 
-                      select#select_group(onchange = "group_select(this.value)")
+                      select#select_group(onchange = "selectGroup(this.value)")
                         option(value = "All") All
                         option(value = "Bronze") Bronze
                         option(value = "Silver") Silver
