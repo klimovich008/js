@@ -24,12 +24,12 @@
   <body>
     <div class="container">
       <div class="row col-md-12 col-md-offset custyle">
-        <table class="table table-striped custab" id="table">
+        <table class="table table-striped custab" id="contributorsTable">
           <thead>
             <tr>
               <th>ID</th>
               <th>login
-                <select id="select_group" onchange="sortTable(this.value)">
+                <select onchange="sortTable(this.value)">
                   <option value="ASC">ASC</option>
                   <option value="DESC">DESC</option>
                 </select>
@@ -37,7 +37,7 @@
               <th>url</th>
               <th>contributions</th>
               <th class="text-center"> 
-                <select id="select_group" onchange="selectGroup(this.value)">
+                <select onchange="selectGroup(this.value)">
                   <option value="All">All</option>
                   <option value="Bronze">Bronze</option>
                   <option value="Silver">Silver</option>

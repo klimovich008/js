@@ -13,7 +13,7 @@ function checkGroup(contributions) {
 function createModal(key, val) {
   $.getJSON("https://api.github.com/users/" + val.login, function (data) {
     modal = generateModalForm(key, data.company, data.location, data.email)
-    $(modal).appendTo("#table");
+    $(modal).appendTo("#contributorsTable");
   });
 }
 function start() {
@@ -33,8 +33,8 @@ function start() {
     });
 
     $("<tbody/>", {
-      html: items.join("")
-    }).appendTo("#table");
+      html: items.join(""),
+    }).appendTo("#contributorsTable");
   })
 }
 
@@ -54,7 +54,7 @@ function generateModalForm(key, company, location, email) {
 }
 
 function selectGroup(input) {
-  let elements = document.querySelectorAll('.line');
+  let elements = document.querySelectorAll('#contributorsTable .line');
   for (i = 0; i < elements.length; i++) {
     group = elements[i].querySelector(".Group");
     elements[i].style.display = group.innerHTML === input || input === "All" ? "" : "none";
@@ -67,7 +67,7 @@ function sortTable(dir) {
   switching = true;
   while (switching) {
     switching = false;
-    b = document.querySelectorAll('.line');
+    b = document.querySelectorAll('#contributorsTable .line');
     for (i = 0; i < (b.length - 1); i++) {
       shouldSwitch = false;
       if (dir === "ASC") {

@@ -25,18 +25,18 @@ html(lang="en")
     body
       .container
           .row.col-md-12.col-md-offset.custyle
-            table.table.table-striped.custab#table
+            table.table.table-striped.custab#contributorsTable
               thead
                 tr
                   th ID
                   th login
-                    select#select_group(onchange = "sortTable(this.value)")
+                    select(onchange = "sortTable(this.value)")
                       option(value = "ASC") ASC
                       option(value = "DESC") DESC
                   th url
                   th contributions
                   th.text-center 
-                      select#select_group(onchange = "selectGroup(this.value)")
+                      select(onchange = "selectGroup(this.value)")
                         option(value = "All") All
                         option(value = "Bronze") Bronze
                         option(value = "Silver") Silver
