@@ -11,39 +11,52 @@ function checkGroup(contributions) {
 }
 
 function createModal(key, val) {
-  $.getJSON("https://api.github.com/users/" + val.login, function (data) {
-    modal = generateModalForm(key, data.company, data.location, data.email)
+  $.getJSON("https://api.github.com/users/" + val.login)
+  .done(function (data) {
+    modal = generateModalForm(key, data.company, data.location, data.email, data.avatar_url)
     $(modal).appendTo("#contributorsTable");
+  })
+  .fail(function (jqxhr, textStatus, error) {
+    var err = textStatus + ", " + error;
+    console.log("Request Failed: " + err);
   });
 }
 function start() {
-  $.getJSON("https://api.github.com/repos/thomasdavis/backbonetutorials/contributors", function (data) {
-    let items = [];
-    let i = 0;
-    let modal = "";
-    $.each(data, function (key, val) {
-      items.push("<tr class = 'line' style='cursor: grab;' data-toggle='modal' data-target='#user_" + key + "' >" +
-                    "<td id='" + key + "' >" + val.id + "</td> " +
-                    "<td>" + val.login + "</td> " +
-                    "<a><td>" + val.url + "</td> </a>" +
-                    "<td>" + val.contributions + "</td> " +
-                     "<td class = 'Group' value='" + checkGroup(val.contributions) + "'>" + checkGroup(val.contributions) + "</td> " +
-                  "</tr>");
-      createModal(key, val);
+  $.getJSON("https://api.github.com/repos/thomasdavis/backbonetutorials/contributors")
+    .done(function (data) {
+      let items = [];
+      let i = 0;
+      let modal = "";
+      $.each(data, function (key, val) {
+        items.push("<tr class = 'line' style='cursor: grab;' data-toggle='modal' data-target='#user_" + key + "' >" +
+          "<td data-title='ID' id='" + key + "' >" + val.id + "</td> " +
+          "<td data-title='login'>" + val.login + "</td> " +
+          "<td data-title='url'><p>" + val.url + "</p></td> " +
+          "<td data-title='contributions'>" + val.contributions + "</td> " +
+          "<td data-title='group' class = 'Group' value='" + checkGroup(val.contributions) + "'>" + checkGroup(val.contributions) + "</td> " +
+          "</tr>");
+        createModal(key, val);
+      });
+
+
+      $("<tbody/>", {
+        html: items.join(""),
+      }).appendTo("#contributorsTable");
+    })
+    .fail(function (jqxhr, textStatus, error) {
+      var err = textStatus + ", " + error;
+      alert("Request Failed: " + err);
     });
 
-    $("<tbody/>", {
-      html: items.join(""),
-    }).appendTo("#contributorsTable");
-  })
 }
 
 
 
-function generateModalForm(key, company, location, email) {
+function generateModalForm(key, company, location, email,image) {
   modal = "<div class=\"modal fade\" id='user_" + key + "' tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\">\r\n \
             <div class=\"modal-dialog modal-sm\">\r\n \
               <div class=\"modal-content\">\r\n \
+                 <img src='" + image + "' width='100%'>    \
                  <div class=\"col\">Company - " + company + "<\/div>\r\n \
                  <div class=\"col\">Location - " + location + "<\/div>\r\n \
                  <div class=\"col\">Email - " + email + "<\/div>\r\n \

@@ -23,23 +23,24 @@ html(lang="en")
                 padding: 20px;
             }
     body
-      .container
-          .row.col-md-12.col-md-offset.custyle
-            table.table.table-striped.custab#contributorsTable
-              thead
-                tr
-                  th ID
-                  th login
-                    select(onchange = "sortTable(this.value)")
-                      option(value = "ASC") ASC
-                      option(value = "DESC") DESC
-                  th url
-                  th contributions
-                  th.text-center 
-                      select(onchange = "selectGroup(this.value)")
-                        option(value = "All") All
-                        option(value = "Bronze") Bronze
-                        option(value = "Silver") Silver
-                        option(value = "Gold") Gold
+#no-more-tables
+  .row
+    .col-md-1
+    table.col-md-10.col-md-offset.custyle.table-bordered.table-striped.table-condensed.cf#contributorsTable
+      thead.cf
+        tr
+          th ID
+          th login
+            select(onchange = "sortTable(this.value)")
+              option(value = "ASC") ASC
+              option(value = "DESC") DESC
+          th url
+          th contributions
+          th.text-center 
+              select(onchange = "selectGroup(this.value)")
+                option(value = "All") All
+                option(value = "Bronze") Bronze
+                option(value = "Silver") Silver
+                option(value = "Gold") Gold 
 
-              
+

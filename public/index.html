@@ -21,33 +21,33 @@
        }
     </style>
   </head>
-  <body>
-    <div class="container">
-      <div class="row col-md-12 col-md-offset custyle">
-        <table class="table table-striped custab" id="contributorsTable">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>login
-                <select onchange="sortTable(this.value)">
-                  <option value="ASC">ASC</option>
-                  <option value="DESC">DESC</option>
-                </select>
-              </th>
-              <th>url</th>
-              <th>contributions</th>
-              <th class="text-center"> 
-                <select onchange="selectGroup(this.value)">
-                  <option value="All">All</option>
-                  <option value="Bronze">Bronze</option>
-                  <option value="Silver">Silver</option>
-                  <option value="Gold">Gold</option>
-                </select>
-              </th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-  </body>
+  <body></body>
 </html>
+<div id="no-more-tables">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <table class="col-md-10 col-md-offset custyle table-bordered table-striped table-condensed cf" id="contributorsTable">
+      <thead class="cf">
+        <tr>
+          <th>ID</th>
+          <th>login
+            <select onchange="sortTable(this.value)">
+              <option value="ASC">ASC</option>
+              <option value="DESC">DESC</option>
+            </select>
+          </th>
+          <th>url</th>
+          <th>contributions</th>
+          <th class="text-center"> 
+            <select onchange="selectGroup(this.value)">
+              <option value="All">All</option>
+              <option value="Bronze">Bronze</option>
+              <option value="Silver">Silver</option>
+              <option value="Gold">Gold </option>
+            </select>
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
