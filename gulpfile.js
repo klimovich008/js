@@ -39,7 +39,7 @@ const templates = () => {
 };
 
 const icons = () => {
-    return gulp.src('src/assets/icons/templates/*.svg', {cwd: ''})
+    return gulp.src('src/assets/icons/templates/*.svg', { cwd: '' })
         .pipe(replace(/fill="none"/g, 'svg-properitie-unfill'))
         .pipe(replace(/fill=\".+?\"/g, 'fill="currentColor"'))
         .pipe(replace(/svg-properitie-unfill/g, 'fill="none"'))
@@ -53,9 +53,9 @@ const icons = () => {
 
 const scripts = () => {
     return (
-      gulp
-        .src(["src/assets/js/**/*"])
-        .pipe(gulp.dest("public/js/"))
+        gulp
+            .src(["src/assets/js/**/*"])
+            .pipe(gulp.dest("public/js/"))
     );
 }
 
@@ -80,17 +80,17 @@ const watchFiles = () => {
         done();
     }));
 
-    browserSync.init({server: ["./", 'public/']});
+    browserSync.init({ server: ["./", 'public/'] });
 };
-const fonts = ()=>{
+const fonts = () => {
     return gulp.src('src/assets/fonts/**/*')
         .pipe(gulp.dest('public/fonts'));
 }
-const images = ()=>{
+const images = () => {
     return gulp.src('src/assets/images/**/*')
         .pipe(gulp.dest('public/images'));
 }
-const css = ()=>{
+const css = () => {
     return gulp.src('src/assets/css/**/*')
         .pipe(gulp.dest('public/css'));
 }
