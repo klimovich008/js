@@ -22,13 +22,13 @@ function start() {
     let i = 0;
     let modal = "";
     $.each(data, function (key, val) {
-      items.push("<tr class = 'line' style='cursor: grab;' data-toggle='modal' data-target='#user_" + key + "' >" + 
-                    "<td id='" + key + "' >" + val.id + "</td> " + 
-                    "<td>" + val.login + "</td> " + 
-                    "<a><td>" + val.url + "</td> </a>" + 
-                    "<td>" + val.contributions + "</td> " + 
-                    "<td class = 'Group' value='" + checkGroup(val.contributions) + "'>" + checkGroup(val.contributions) + "</td> " 
-                 + "</tr>");
+      items.push("<tr class = 'line' style='cursor: grab;' data-toggle='modal' data-target='#user_" + key + "' >" +
+        "<td id='" + key + "' >" + val.id + "</td> " +
+        "<td>" + val.login + "</td> " +
+        "<a><td>" + val.url + "</td> </a>" +
+        "<td>" + val.contributions + "</td> " +
+        "<td class = 'Group' value='" + checkGroup(val.contributions) + "'>" + checkGroup(val.contributions) + "</td> "
+        + "</tr>");
       createModal(key, val);
     });
 
