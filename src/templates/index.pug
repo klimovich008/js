@@ -18,6 +18,7 @@ html(lang="en")
         script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
         <![endif]-->
         script(src="js/table.js")
+        script(src="js/knockout-3.5.0.js")
         style(type='text/css').
            .page-main {
                 padding: 20px;
@@ -42,5 +43,14 @@ html(lang="en")
                 option(value = "Bronze") Bronze
                 option(value = "Silver") Silver
                 option(value = "Gold") Gold 
+      tbody(data-bind="foreach: contributors")
+        tr.line(style="cursor: grab;" data-toggle="modal"  data-bind="attr: { 'data-target' : '#'+id  }")
+          td#0(data-bind="text: id" data-title="ID") 
+          td(data-bind="text: login" data-title="login") 
+          td(data-title="url")
+            p( data-bind="text: url" ) 
+          td(data-title="contributions" data-bind="text: contributions") 
+          td.Group(data-title="group" value="Gold" data-bind="text: (contributions > Gold) ? 'Gold' : (contributions > Silver) ? 'Silver' : 'Bronze'") Gold
 
+                
 

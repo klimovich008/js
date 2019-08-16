@@ -15,6 +15,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="js/table.js"></script>
+    <script src="js/knockout-3.5.0.js"></script>
     <style type="text/css">
       .page-main {
            padding: 20px;
@@ -48,6 +49,17 @@
           </th>
         </tr>
       </thead>
+      <tbody data-bind="foreach: contributors">
+        <tr class="line" style="cursor: grab;" data-toggle="modal" data-bind="attr: { 'data-target' : '#'+id  }">
+          <td id="0" data-bind="text: id" data-title="ID"> </td>
+          <td data-bind="text: login" data-title="login"> </td>
+          <td data-title="url">
+            <p data-bind="text: url"> </p>
+          </td>
+          <td data-title="contributions" data-bind="text: contributions"> </td>
+          <td class="Group" data-title="group" value="Gold" data-bind="text: (contributions &gt; Gold) ? 'Gold' : (contributions &gt; Silver) ? 'Silver' : 'Bronze'">Gold</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
